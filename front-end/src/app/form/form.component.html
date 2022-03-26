@@ -1,0 +1,85 @@
+<div class="card form-card">
+  <div class="form-title text-center">
+    <h3>Open Book Form</h3>
+  </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="submitError">
+    please fill the form below all required
+  </div>
+
+  <div class="form-container">
+    <form [formGroup]="form" (submit)="AddNewBook()">
+      <!-- ============================================> Book Title <===================================== -->
+      <div class="mb-3">
+        <label for="book-title" class="form-label">Book title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="book-title"
+          formControlName="bookTitle"
+        />
+        <!-- <div class="form-text">Please Enter a Valid Book Title.</div> -->
+      </div>
+      <!-- error -->
+      <!-- ============================================> Price <===================================== -->
+      <div class="mb-3">
+        <label for="book-price" class="form-label">Price</label>
+        <input
+          type="number"
+          class="form-control"
+          id="book-price"
+          formControlName="bookPrice"
+        />
+        <!-- <div  class="form-text">
+          We'll never share your email with anyone else.
+        </div> -->
+      </div>
+
+      <!-- ============================================> author-name <===================================== -->
+      <div class="mb-3">
+        <label for="author-name" class="form-label">Author Name</label>
+        <input
+          type="tetx"
+          class="form-control"
+          id="author-name"
+          formControlName="authorName"
+        />
+        <!-- <div  class="form-text">
+          We'll never share your email with anyone else.
+        </div> -->
+      </div>
+
+      <!-- ============================================> author-email  <===================================== -->
+      <div class="mb-3">
+        <label for="author-email" class="form-label">Author Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="author-email"
+          formControlName="authorEmail"
+        />
+        <!-- <div  class="form-text">
+          We'll never share your email with anyone else.
+        </div> -->
+      </div>
+
+      <!-- ============================================> Contact Number <===================================== -->
+      <div class="mb-3">
+        <label for="contact-number" class="form-label">Contact Number</label>
+        <input
+          type="number"
+          class="form-control"
+          id="contact-number"
+          formControlName="contactNumber"
+        />
+        <!-- <div  class="form-text">
+          We'll never share your email with anyone else.
+        </div> -->
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        {{ isUpdateForm ? "Update" : "Add New" }}
+      </button>
+    </form>
+  </div>
+</div>

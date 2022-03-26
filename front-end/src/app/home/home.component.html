@@ -1,0 +1,53 @@
+<!-- ==============================> modal on mobile view <====================================== -->
+<!-- =========> modal hidden button <=============== -->
+<button
+  #openBtn
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#formModal"
+  data-bs-whatever="@mdo"
+  style="visibility: hidden"
+></button>
+
+<!-- =========> modal hold form component <=============== -->
+<div
+  class="modal fade"
+  id="formModal"
+  tabindex="-1"
+  aria-labelledby="formModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="formModalLabel">Add New Book</h5>
+        <button
+          #closeBtn
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- form component -->
+        <app-form (openForm)="openDataForm($event)"></app-form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ==============================> end modal on mobile view <====================================== -->
+
+<section class="main-section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <app-data-table (openForm)="openDataForm($event)"></app-data-table>
+      </div>
+      <div class="col-md-4 d-none d-sm-block">
+        <app-form></app-form>
+      </div>
+    </div>
+  </div>
+</section>

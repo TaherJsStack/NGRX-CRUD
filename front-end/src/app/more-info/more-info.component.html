@@ -1,0 +1,32 @@
+<section class="main-section">
+  <div class="container">
+    <div class="card" style="width: 18rem">
+      <img
+        src="https://st2.depositphotos.com/1105977/5461/i/600/depositphotos_54615585-stock-photo-old-books-on-wooden-table.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-text">
+          <strong> Author Name:</strong> {{ bookInfo.authorName }}
+        </h5>
+        <p class="card-title">
+          <strong> Book Title:</strong> {{ bookInfo.bookTitle }}
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <strong>Book Price:</strong> {{ bookInfo.bookPrice }}
+        </li>
+        <li class="list-group-item">
+          <strong>Contact Number:</strong> {{ bookInfo.contactNumber }}
+        </li>
+        <li class="list-group-item"><strong>ID:</strong> {{ bookInfo.id }}</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </div>
+</section>

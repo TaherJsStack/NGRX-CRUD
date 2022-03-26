@@ -1,0 +1,112 @@
+.form-card {
+  width: 70%;
+  background: rgb(214, 219, 222);
+  background: linear-gradient(
+    195deg,
+    rgba(214, 219, 222, 1) 0%,
+    rgba(214, 219, 222, 1) 100%
+  );
+  box-shadow: inset -1px 3px 10px -8px;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  padding: 15px;
+  margin: auto;
+  .form-title {
+    background-color: #1498ca;
+    color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 17px 0;
+    margin-bottom: 10px;
+    font-family: MontserratExtraBold;
+    h3 {
+      font-size: 1.9vw;
+    }
+  }
+
+  .form-container {
+    padding: 5px 20px;
+    form {
+      div {
+        label {
+          margin-bottom: 0;
+          font-family: MontserratRegular;
+          font-size: 13px;
+          color: #162852;
+        }
+        input {
+          &.error {
+            border-color: #c80808;
+          }
+        }
+
+        .form-text {
+          margin-top: 0;
+          font-family: MontserratLight;
+          color: #c80808;
+          font-size: 12px;
+        }
+      }
+
+      button {
+        background-color: #19233d;
+        margin: auto;
+        width: 62%;
+        display: block;
+        border: unset;
+        border-color: unset;
+        border-radius: 10px;
+        font-family: MontserratBlack;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .form-card {
+    width: 100%;
+
+    .form-title {
+      h3 {
+        font-size: 5vw;
+      }
+    }
+
+    .form-container {
+      padding: 5px 20px;
+      form {
+        div {
+          label {
+            margin-bottom: 0;
+            font-family: MontserratRegular;
+            font-size: 13px;
+            color: #162852;
+          }
+          input {
+            &.error {
+              border-color: #c80808;
+            }
+          }
+
+          .form-text {
+            margin-top: 0;
+            font-family: MontserratLight;
+            color: #c80808;
+            font-size: 12px;
+          }
+        }
+
+        button {
+          background-color: #19233d;
+          margin: auto;
+          width: 62%;
+          display: block;
+          border: unset;
+          border-color: unset;
+          border-radius: 10px;
+          font-family: MontserratBlack;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+<!-- ===========================> Modal clear table data <================================== -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="clearDataModal"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="clearDataModal">Conformational Modal</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Are You Sure You Want To Clear Book List</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="clearBookList()"
+        >
+          clear Book List
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===========================> end Modal clear table data <================================== -->
+
+<!-- ===========================> spinner <================================== -->
+<ng-container *ngIf="isLoading$ | async">
+  <div class="spinner-border" role="status">
+    <!-- <span class="sr-only">Loading...</span> -->
+  </div>
+</ng-container>
+<!-- ===========================> end spinner <============================= -->
+
+<!-- ===========================> data table <============================= -->
+<section class="data-table">
+  <table class="table caption-top">
+    <caption>
+      List of B00k
+
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-danger btn-sm"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        *ngIf="dataLength"
+      >
+        clear Book List
+      </button>
+
+      <!-- ===================> button view only on mobil <======================= -->
+      <button
+        type="button"
+        class="btn btn-primary btn-sm d-block d-sm-none"
+        (click)="openForm.emit(true)"
+      >
+        Add New Book
+      </button>
+      <!-- ===================> end button view only on mobil <=================== -->
+    </caption>
+
+    <thead *ngIf="bookList$ | async">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Book Title</th>
+        <th scope="col">Price</th>
+        <th scope="col">Author Name</th>
+        <th scope="col">Author Email</th>
+        <th scope="col">Contact No</th>
+        <th scope="col">Controler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookList$ | async; let i = index">
+        <th scope="row">{{ i }}</th>
+        <td>{{ book.bookTitle | slice: 1:8 }}</td>
+        <td>{{ book.bookPrice }} $</td>
+        <td>{{ book.authorName }}</td>
+        <td>{{ book.authorEmail }}</td>
+        <td>{{ book.contactNumber }}</td>
+        <td class="controll-buts">
+          <button
+            type="button"
+            class="btn btn-primary btn-sm"
+            (click)="editBook(book.id)"
+          >
+            Edit
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-info btn-sm"
+            (click)="moreInfo(book.id)"
+          >
+            More
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger btn-sm"
+            (click)="deleteBook(book.id)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ===========================> end data table <============================= -->
